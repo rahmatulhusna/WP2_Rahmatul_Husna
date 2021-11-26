@@ -9,7 +9,6 @@ class Buku extends CI_Controller
         cek_login();
     }
 
-    //manajemen kategori
     public function kategori()
         {
             $data['judul'] = 'Kategori Buku';
@@ -18,7 +17,7 @@ class Buku extends CI_Controller
 
             $this->form_validation->set_rules('kategori', 'Kategori', 
 'required', [
-            'required' => 'Judul Buku harus diisi'
+                'required' => 'Judul Buku harus diisi'
             ]);
 
             if ($this->form_validation->run() == false) {
@@ -36,7 +35,7 @@ class Buku extends CI_Controller
                 redirect('buku/kategori');
             }
         }
-
+ 
         public function hapusKategori()
         {
             $where = ['id' => $this->uri->segment(3)];
